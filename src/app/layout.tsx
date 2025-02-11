@@ -11,9 +11,11 @@ export default function RootLayout({
       <body>
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 bg-gray-950 min-h-screen">{children}</main>
+          <main className="flex-1 bg-gray-950 min-h-screen overflow-x-hidden">
+            {children}
+          </main>
         </div>
       </body>
     </html>
   );
-} 
+}

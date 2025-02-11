@@ -1,4 +1,21 @@
 export default function Profile() {
+
+  const data = [
+    { label: 'Full Name', value: 'Sam Hooda' },
+    { label: 'Email', value: 'sam@gamil.com' },
+    { label: 'Phone', value: '+91 8253697589' },
+    { label: 'Location', value: 'Kolkata, India' },
+    { label: 'Joined', value: 'March 2024' },
+    { label: 'Role', value: 'Software Engineer' },
+              ]
+
+  const activity = [
+    { action: 'Updated profile picture', time: '2 hours ago' },
+    { action: 'Changed password', time: '1 day ago' },
+    { action: 'Completed project milestone', time: '3 days ago' },
+    { action: 'Added new team member', time: '1 week ago' },
+  ]
+
   return (
     <div className="p-8">
       <div className="mb-8">
@@ -24,14 +41,7 @@ export default function Profile() {
           <div className="bg-gray-800 rounded-lg p-6 mb-6">
             <h2 className="text-white text-xl mb-4">Personal Information</h2>
             <div className="grid grid-cols-2 gap-6">
-              {[
-                { label: 'Full Name', value: 'Sam Hooda' },
-                { label: 'Email', value: 'sam@gamil.com' },
-                { label: 'Phone', value: '+91 8253697589' },
-                { label: 'Location', value: 'Kolkata, India' },
-                { label: 'Joined', value: 'March 2024' },
-                { label: 'Role', value: 'Software Engineer' },
-              ].map((item) => (
+              {data.map((item) => (
                 <div key={item.label} className="mb-4">
                   <label className="block text-gray-400 text-sm mb-2">{item.label}</label>
                   <div className="text-white">{item.value}</div>
@@ -43,12 +53,7 @@ export default function Profile() {
           <div className="bg-gray-800 rounded-lg p-6">
             <h2 className="text-white text-xl mb-4">Recent Activity</h2>
             <div className="space-y-4">
-              {[
-                { action: 'Updated profile picture', time: '2 hours ago' },
-                { action: 'Changed password', time: '1 day ago' },
-                { action: 'Completed project milestone', time: '3 days ago' },
-                { action: 'Added new team member', time: '1 week ago' },
-              ].map((item) => (
+              {activity.map((item) => (
                 <div key={item.action} className="flex items-center justify-between text-gray-400 py-2 border-b border-gray-700">
                   <span>{item.action}</span>
                   <span className="text-sm">{item.time}</span>
